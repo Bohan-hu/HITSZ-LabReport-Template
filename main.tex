@@ -1,0 +1,101 @@
+%!TEX program=xelatex
+\documentclass[a4paper]{ctexrep}
+ %%%%%%%%%%%%  Include Packages  %%%%%%%%%%%%%%
+\usepackage{fancyhdr}
+\usepackage[colorlinks, linkcolor=black]{hyperref}
+\usepackage{listings, geometry, amsmath, graphicx, tabularx, topcapt}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage{adjustbox}
+\usepackage{tikz}
+\usetikzlibrary{circuits.logic.US}
+\tikzstyle{branch}=[fill,shape=circle,minimum size=2pt,inner sep=0pt]
+\def\srdefaultlength{0.5cm}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{lipsum}
+\usepackage{float}
+\usepackage{multirow}
+\usepackage{fancyvrb}
+\usepackage[section]{placeins}% force float within subsection
+%%%%%%%%%%%%%%%  Color and Fonts  %%%%%%%%%%%%%%%%%%
+
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+
+
+%%%%%%%%%%%%%%% BEGIN define mips asm code list environment %%%%%%%%%%%
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  language=Python,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+
+\geometry{left=3cm,right=3cm,top=4cm,bottom=5cm}
+
+\hypersetup{
+	pdftitle={人工智能实验报告},
+	pdfauthor={胡博涵},
+	pdfsubject={人工智能},
+	pdfkeywords={},
+}
+
+\ctexset {
+	section = {
+		number = \arabic{section},
+		format = \Large\bfseries,
+	},
+	subsection = {
+		number = \arabic{section}.\arabic{subsection},
+	}
+}
+
+%%%%页眉页脚
+\title{人工智能实验报告}
+\begin{document}
+\input{titlepage.tex}
+
+%%%%%%%%%%%%%%%%%%%  目录  %%%%%%%%%%%%%%%%%%%%%	
+	
+%\setcounter{tocdepth}	% 目录深度到 \section{} 为止
+\tableofcontents % 内容目录
+\pagebreak
+
+%\listoffigures % 图片目录
+%\pagebreak
+
+%\listoftables  %表格目录
+%\pagebreak
+
+%%%%%%%%%%%%%% 正文  %%%%%%%%%%%%%%%%%
+
+%
+\pagestyle{fancy}
+\lhead{}% 使用lhead 定义左侧上方页眉
+\chead{人工智能实验报告}% 使用rhead 定义右侧上方页眉
+\rhead{}
+\lfoot{}% 使用lfoot 定义左侧下方页脚
+\cfoot{\thepage}% 使用cfoot 定义下方中间页脚
+\rfoot{}% 使用rfoot 定义右侧下方页脚
+\renewcommand{\headrulewidth}{0.2pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\input{lab1.tex}
+
+\end{document}
